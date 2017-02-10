@@ -1,0 +1,290 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>《JS启示录》笔记 | ξ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="余 ξ">
+  
+  
+    <meta name="description" content="此书让你深入了解JS对象，JS几乎所有东西都是对象或用起来像对象
+
+
+摘要
+自定义构造函数，保持名称第一个字母大写
+字面量表达式创建对象{},[]创建的是对象1,’string’,true,创建的是原始值
+new关键字调用构造函数的语法来创建对象new Number()new String()new Boolean() 创建的是对象Number()String()Boolean() 没有new关">
+  
+  <meta name="description" content="此书让你深入了解JS对象，JS几乎所有东西都是对象或用起来像对象
+
+
+摘要
+自定义构造函数，保持名称第一个字母大写
+字面量表达式创建对象{},[]创建的是对象1,’string’,true,创建的是原始值
+new关键字调用构造函数的语法来创建对象new Number()new String()new Boolean() 创建的是对象Number()String()Boolean() 没有new关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《JS启示录》笔记">
+<meta property="og:url" content="http://yoursite.com/2015/03/24/《JS启示录》读后感/index.html">
+<meta property="og:site_name" content="ξ">
+<meta property="og:description" content="此书让你深入了解JS对象，JS几乎所有东西都是对象或用起来像对象
+
+
+摘要
+自定义构造函数，保持名称第一个字母大写
+字面量表达式创建对象{},[]创建的是对象1,’string’,true,创建的是原始值
+new关键字调用构造函数的语法来创建对象new Number()new String()new Boolean() 创建的是对象Number()String()Boolean() 没有new关">
+<meta property="og:updated_time" content="2016-11-12T02:30:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《JS启示录》笔记">
+<meta name="twitter:description" content="此书让你深入了解JS对象，JS几乎所有东西都是对象或用起来像对象
+
+
+摘要
+自定义构造函数，保持名称第一个字母大写
+字面量表达式创建对象{},[]创建的是对象1,’string’,true,创建的是原始值
+new关键字调用构造函数的语法来创建对象new Number()new String()new Boolean() 创建的是对象Number()String()Boolean() 没有new关">
+  
+    <link rel="alternate" href="/atom.xml" title="ξ" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59443742-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+      <span id="busuanzi_container_site_pv">
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span>
+    <h1><a href="/">ξ</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/03/24/《JS启示录》读后感/">
+  <time datetime="2015-03-23T23:51:49.000Z">
+    2015-03-24
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">《JS启示录》笔记</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <ul>
+<li>此书让你深入了解JS对象，JS几乎所有东西都是对象或用起来像对象</li>
+</ul>
+<hr>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><ul>
+<li>自定义构造函数，保持名称第一个字母大写</li>
+<li>字面量表达式创建对象<br>{},[]创建的是对象<br>1,’string’,true,创建的是原始值</li>
+<li>new关键字调用构造函数的语法来创建对象<br>new Number()<br>new String()<br>new Boolean() 创建的是对象<br>Number()<br>String()<br>Boolean() 没有new关键字的，则创建的是原始值<a id="more"></a></li>
+<li>null undefined是原始值</li>
+<li>原始值 按值复制；对象 按引用存储，===比较是否指向同一个对象</li>
+<li><p>构造函数实例都拥有指向其构造函数的constructor属性，instanceof只适用于构造函数创建返回的复杂对象和实例</p>
+</li>
+<li><p>相较于点，中括号可用来访问特殊名的属性</p>
+</li>
+<li>in可坚持一个对象的属性，包括原型链；hasOwnProperty()可检查来自非原型链属性的对象</li>
+</ul>
+<h3 id="Chapter4-函数"><a href="#Chapter4-函数" class="headerlink" title="Chapter4 函数"></a>Chapter4 函数</h3><ul>
+<li>函数返回值默认undefined，构造函数返回值为对象实例</li>
+<li>函数是对象，因为可有属性，是个值（最终返回值）</li>
+<li>this arguments适用于所有函数，argums.callee</li>
+<li>函数定义有三种<ul>
+<li>函数构造函数new Function()</li>
+<li>函数语句function a(){}</li>
+<li>函数表达式var a =  function(){}</li>
+</ul>
+</li>
+<li>调用函数，call(),apply()区别是参数传递的不同，前者传递多个分开的参数，后者传递多个参数组成的数组</li>
+<li>自调用的<em>函数表达式</em>，若要立即调用函数，需在函数外面的圆括号，或任何将函数转换为表达式的符号。<br>(function (){}()) ,(function (){})(),!function (){}()，var a = function (){}()<br>function (){}()不会立即执行</li>
+<li>函数表达式没有被提升，只有函数语句被提升，即函数定义前可被调用</li>
+</ul>
+<h3 id="Chapter5-head-全局对象"><a href="#Chapter5-head-全局对象" class="headerlink" title="Chapter5 head/全局对象"></a>Chapter5 head/全局对象</h3><ul>
+<li>head对象，包含所有对象的对象浏览器是window，this</li>
+<li>全局对象，全局属性是直接包含在head对象内不的值</li>
+<li>显示引用head，性能代价高，若只依靠作用域链，避免显示引用head会更快</li>
+</ul>
+<h3 id="Chapter6-this"><a href="#Chapter6-this" class="headerlink" title="Chapter6 this"></a>Chapter6 this</h3><ul>
+<li>this在函数内部使用，引用包含函数的对象</li>
+<li>自定义构造函数：new，this指对象实例；若没有new，this是上下文</li>
+<li>call apply，控制this值</li>
+<li>this的宿主函数北封装在另一个函数内或另一个函数的上下文中被调用，this永远是对head对象的引用；可在父函数that保留this引用</li>
+<li>构造函数的prototype属性的函数中使用this，this引用调用方法的实例</li>
+</ul>
+<h3 id="Chapter7-作用域-amp-闭包"><a href="#Chapter7-作用域-amp-闭包" class="headerlink" title="Chapter7 作用域&amp;闭包"></a>Chapter7 作用域&amp;闭包</h3><ul>
+<li>作用域是执行代码的上下文，js作用域包括全局作用域，函数作用域，eval作用域</li>
+<li>作用域链（词法作用域）：包含函数的函数，会创建堆栈执行作用域，这些链接在一起的栈称为作用域链；</li>
+<li>var vs 全局作用域</li>
+<li>函数定义时确定作用域，而非调用时确定，所以又叫词法作用域</li>
+<li>闭包：让函数向全局作用域返回一个嵌套函数，但该函数仍能通过作用域链访问其父函数的作用域；闭包是由作用域链引起的<ul>
+<li>作用域链式基于代码的编写方式创建的，而不是基于调用函数所在的上下文，这使得函数即使从一个不同的上下文调用函数，也能够访问最初编写代码时所在的作用域，这称为闭包。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Chapter8-函数原型属性"><a href="#Chapter8-函数原型属性" class="headerlink" title="Chapter8 函数原型属性"></a>Chapter8 函数原型属性</h3><ul>
+<li>原型链 最后是Object.prototype</li>
+<li>默认的prototype属性是Object()对象</li>
+<li>myArray.<em>proto</em>或myArray.constructor.prototype引用Array.prototype</li>
+<li>用新对象替换prototype属性回删除默认构造函数属性，constructor</li>
+<li>Array.prototype={},myArray.constructor===Object();所以要Array.prototype={constructor:Array};</li>
+<li>用新对象替换prototype属性不会更新以前的实例：Array.prototype={a:1}不会更新；Array.prototype.a=2会更新</li>
+<li>原型继承链，实例化想要继承的对象，将该对象实例作为要继承该对象实例的函数的prototype属性值，eg:<br><code>var Person = function () {
+}
+var Chef = function () {
+}
+Chef.prototype = new Person();
+var cody = new Chef()</code></li>
+</ul>
+<h3 id="Chapter12-Boolean"><a href="#Chapter12-Boolean" class="headerlink" title="Chapter12 Boolean()"></a>Chapter12 Boolean()</h3><ul>
+<li>Boolean(0 -0 null false NAN undefined “”) 都是false</li>
+<li>非原始false布尔对象转换为true，eg:<br><code>Boolean(&#39;false&#39;)//true
+var falseValue=new Boolean(false);
+if(falseValue){console.log(&#39;falseValue is truthy&#39;);}</code></li>
+</ul>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><ul>
+<li>直接在原始数字上访问属性时，该值被当作对象之前必须进行评估，1..toString()，第一个点被认为是数字十进制的小数点；临时包装器对象</li>
+<li>null可表明属性拥有一个空值，等待赋值；typeof null返回object,===null 来判断，==无法区分null和undefined</li>
+<li>undefined告诉你有东西丢失了；永远不要将一个值设置为undefined，若制定一个属性或变量值不可用，应为null<ul>
+<li>声明的变量未指定值</li>
+<li>试图访问的对象属性未定义，并且不存在于原型链</li>
+</ul>
+</li>
+<li><code>undefined in this</code>全局作用域定义undefined</li>
+</ul>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/读书笔记/">读书笔记</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="《JS启示录》笔记" data-thread-key="2015/03/24/《JS启示录》读后感/">
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2017 <a href="/">余 ξ</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+   | 
+  Reredesign by <a href="https://github.com/Jane8Yu" target="_blank">yzhen</a>
+</div>
+<div class="clearfix"></div>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script></footer>
+  <div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/star-bg.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->`
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'lexyu-blog' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59443742-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

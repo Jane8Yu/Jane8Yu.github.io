@@ -1,0 +1,200 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>vim常用命令小结 | ξ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="余 ξ">
+  
+  
+    <meta name="description" content="插入i inserta 光标后插入o 当前行后插入新行O 当前行前插入新行">
+  
+  <meta name="description" content="插入i inserta 光标后插入o 当前行后插入新行O 当前行前插入新行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim常用命令小结">
+<meta property="og:url" content="http://yoursite.com/2015/07/19/vim学习笔记/index.html">
+<meta property="og:site_name" content="ξ">
+<meta property="og:description" content="插入i inserta 光标后插入o 当前行后插入新行O 当前行前插入新行">
+<meta property="og:updated_time" content="2016-11-12T02:30:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vim常用命令小结">
+<meta name="twitter:description" content="插入i inserta 光标后插入o 当前行后插入新行O 当前行前插入新行">
+  
+    <link rel="alternate" href="/atom.xml" title="ξ" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59443742-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+      <span id="busuanzi_container_site_pv">
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span>
+    <h1><a href="/">ξ</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/07/19/vim学习笔记/">
+  <time datetime="2015-07-19T03:43:14.000Z">
+    2015-07-19
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">vim常用命令小结</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><p><code>i</code> insert<br><code>a</code> 光标后插入<br><code>o</code> 当前行后插入新行<br><code>O</code> 当前行前插入新行<br><a id="more"></a></p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p><code>dd</code> 删行</p>
+<h3 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h3><p>yy 拷贝当前行<br>y$ copy to end of line</p>
+<h3 id="剪切"><a href="#剪切" class="headerlink" title="剪切"></a>剪切</h3><p>D cut to end ot line</p>
+<h3 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h3><p>p  粘贴</p>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><p>hjkl</p>
+<h4 id="头"><a href="#头" class="headerlink" title="头"></a>头</h4><p>0 行头<br>^ 非空白行头<br>gg beginning of file<br>b beginning of word<br>w W word</p>
+<h4 id="尾"><a href="#尾" class="headerlink" title="尾"></a>尾</h4><p>$ 行尾<br>g 空白符行尾<br>L end of file<br>e E word end</p>
+<h4 id="行"><a href="#行" class="headerlink" title="行"></a>行</h4><p>:n 到第N行<br>n|column n<br>[[ function start<br>[{ block start</p>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><p>oy$ 先移到行头，从这里开始拷贝，拷贝到行末<br>y2/foo 拷贝两个foo之间的字符串</p>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>esc normal<br>:wq zz 存盘 退出</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>. n <command>重复某命令n次</p>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/术/">术</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/vim/">vim</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="vim常用命令小结" data-thread-key="2015/07/19/vim学习笔记/">
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2017 <a href="/">余 ξ</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+   | 
+  Reredesign by <a href="https://github.com/Jane8Yu" target="_blank">yzhen</a>
+</div>
+<div class="clearfix"></div>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script></footer>
+  <div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/star-bg.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->`
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'lexyu-blog' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59443742-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

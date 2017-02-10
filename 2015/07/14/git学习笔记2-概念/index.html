@@ -1,0 +1,199 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>git学习笔记2-概念 | ξ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="余 ξ">
+  
+  
+    <meta name="description" content="Git会把你的每次提交的文件的全部内容（snapshot）都会记录下来。用来表示项目历史信息的文件，通过一个40个字符的（40-digit）“对象名”来索引每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，这样就意味着两个不同内容的对象不可能有相同的“对象名”。
+###　对象每个对象(object) 包括三个部分：类型，大小和内容。四种类型的对象：”blob”、”tree”、 “comm">
+  
+  <meta name="description" content="Git会把你的每次提交的文件的全部内容（snapshot）都会记录下来。用来表示项目历史信息的文件，通过一个40个字符的（40-digit）“对象名”来索引每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，这样就意味着两个不同内容的对象不可能有相同的“对象名”。
+###　对象每个对象(object) 包括三个部分：类型，大小和内容。四种类型的对象：”blob”、”tree”、 “comm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习笔记2-概念">
+<meta property="og:url" content="http://yoursite.com/2015/07/14/git学习笔记2-概念/index.html">
+<meta property="og:site_name" content="ξ">
+<meta property="og:description" content="Git会把你的每次提交的文件的全部内容（snapshot）都会记录下来。用来表示项目历史信息的文件，通过一个40个字符的（40-digit）“对象名”来索引每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，这样就意味着两个不同内容的对象不可能有相同的“对象名”。
+###　对象每个对象(object) 包括三个部分：类型，大小和内容。四种类型的对象：”blob”、”tree”、 “comm">
+<meta property="og:updated_time" content="2016-11-12T02:30:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git学习笔记2-概念">
+<meta name="twitter:description" content="Git会把你的每次提交的文件的全部内容（snapshot）都会记录下来。用来表示项目历史信息的文件，通过一个40个字符的（40-digit）“对象名”来索引每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，这样就意味着两个不同内容的对象不可能有相同的“对象名”。
+###　对象每个对象(object) 包括三个部分：类型，大小和内容。四种类型的对象：”blob”、”tree”、 “comm">
+  
+    <link rel="alternate" href="/atom.xml" title="ξ" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59443742-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+      <span id="busuanzi_container_site_pv">
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span>
+    <h1><a href="/">ξ</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/07/14/git学习笔记2-概念/">
+  <time datetime="2015-07-14T00:19:02.000Z">
+    2015-07-14
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">git学习笔记2-概念</h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <p>Git会把你的每次提交的文件的全部内容（snapshot）都会记录下来。<br>用来表示项目历史信息的文件，通过一个40个字符的（40-digit）“对象名”来索引<br>每一个“对象名”都是对“对象”内容做SHA1哈希计算得来的，这样就意味着两个不同内容的对象不可能有相同的“对象名”。</p>
+<p>###　对象<br>每个对象(object) 包括三个部分：类型，大小和内容。<br>四种类型的对象：”blob”、”tree”、 “commit” 和”tag”。<br><a id="more"></a></p>
+<h4 id="查看一个blob对象里的内容"><a href="#查看一个blob对象里的内容" class="headerlink" title="查看一个blob对象里的内容"></a>查看一个blob对象里的内容</h4><p>$ git show 6ff87c4664</p>
+<h4 id="查看tree对象"><a href="#查看tree对象" class="headerlink" title="查看tree对象"></a>查看tree对象</h4><p>一个tree对象有一串(bunch)指向blob对象或是其它tree对象的指针，它一般用来表示内容之间的目录层次关系。<br>$ git ls-tree fb3a8bdd0ce</p>
+<h4 id="commit对象"><a href="#commit对象" class="headerlink" title="commit对象"></a>commit对象</h4><p>git show -s –pretty=raw 2be7fcb476</p>
+<h4 id="tag对象"><a href="#tag对象" class="headerlink" title="tag对象"></a>tag对象</h4><p>git cat-file tag v1.5.0</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>每个目录都创建了 tree对象 (包括根目录), 每个文件都创建了一个对应的 blob对象 . 最后有一个 commit对象 来指向根tree对象(root of trees), 这样我们就可以追踪项目每一项提交内容.</p>
+<hr>
+<h3 id="Git目录"><a href="#Git目录" class="headerlink" title="Git目录"></a>Git目录</h3><p>所有历史和元信息的目录 - 包括所有的对象(commits,trees,blobs,tags), 这些对象指向不同的分支.</p>
+<h3 id="工作目录"><a href="#工作目录" class="headerlink" title="工作目录"></a>工作目录</h3><p>存储着你现在签出(checkout)来用来编辑的文件<br>只用来临时保存签出(checkout) 文件的地方, 你可以编辑工作目录的文件直到下次提交(commit)为止.</p>
+<h3 id="Git索引"><a href="#Git索引" class="headerlink" title="Git索引"></a>Git索引</h3><p>在你的工作目录和项目仓库间的暂存区(staging area)<br>创建了一个提交(commit), 那么提交的是当前索引(index)里的内容, 而不是工作目录中的内容.<br> git status 命令是查看索引内容<br> 哪些文件被暂存了(就是在你的Git索引中), 哪些文件被修改了但是没有暂存, 还有哪些文件没有被跟踪(untracked).</p>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/git/">git</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="git学习笔记2-概念" data-thread-key="2015/07/14/git学习笔记2-概念/">
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2017 <a href="/">余 ξ</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+   | 
+  Reredesign by <a href="https://github.com/Jane8Yu" target="_blank">yzhen</a>
+</div>
+<div class="clearfix"></div>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script></footer>
+  <div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/star-bg.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->`
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'lexyu-blog' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59443742-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>

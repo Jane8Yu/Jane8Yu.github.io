@@ -1,0 +1,307 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>论文笔记：Chimera | ξ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="余 ξ">
+  
+  
+    <meta name="description" content="简介Chimera: Collaborative Preemption for Multitasking on a Shared GPU">
+  
+  <meta name="description" content="简介Chimera: Collaborative Preemption for Multitasking on a Shared GPU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文笔记：Chimera">
+<meta property="og:url" content="http://yoursite.com/2015/11/15/论文笔记：Chimera-Collaborative-Preemption-for-Multitasking-on-a-Shared-GPU/index.html">
+<meta property="og:site_name" content="ξ">
+<meta property="og:description" content="简介Chimera: Collaborative Preemption for Multitasking on a Shared GPU">
+<meta property="og:image" content="https://coding.net/api/project/178029/files/403854/imagePreview">
+<meta property="og:updated_time" content="2016-11-12T02:30:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="论文笔记：Chimera">
+<meta name="twitter:description" content="简介Chimera: Collaborative Preemption for Multitasking on a Shared GPU">
+<meta name="twitter:image" content="https://coding.net/api/project/178029/files/403854/imagePreview">
+  
+    <link rel="alternate" href="/atom.xml" title="ξ" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59443742-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+      <span id="busuanzi_container_site_pv">
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span>
+    <h1><a href="/">ξ</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/11/15/论文笔记：Chimera-Collaborative-Preemption-for-Multitasking-on-a-Shared-GPU/">
+  <time datetime="2015-11-15T12:33:47.000Z">
+    2015-11-15
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">论文笔记：Chimera</h1>
+  
+
+  </header>
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="https://coding.net/api/project/178029/files/403854/imagePreview">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="entry">
+    
+      <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=ieArtTcAAAAJ&amp;citation_for_view=ieArtTcAAAAJ:2osOgNQ5qMEC" target="_blank" rel="external">Chimera: Collaborative Preemption for Multitasking on a Shared GPU</a></p>
+<a id="more"></a>
+<ul>
+<li><p>Keywords:</p>
+<ul>
+<li><p>Graphics Processing Unit;</p>
+</li>
+<li><p>Preemptive Multitasking;</p>
+</li>
+<li><p>ContextSwitch;</p>
+</li>
+<li><p>Idempotence</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="问题的提出"><a href="#问题的提出" class="headerlink" title="问题的提出"></a>问题的提出</h2><blockquote>
+<p>Preemptive multitasking on CPUs has been primarily supported through context switching. However, the same preemption strategy incurs substantial overhead due to the large context in GPUs.</p>
+</blockquote>
+<p>由于GPU的上下文很大，因此上下文切换不适用于GPU的抢占技术</p>
+<h2 id="解决方案的提出"><a href="#解决方案的提出" class="headerlink" title="解决方案的提出"></a>解决方案的提出</h2><blockquote>
+<p>   we propose Chimera, a collaborative preemption approach that can precisely control the overhead for multitasking on GPUs</p>
+</blockquote>
+<p>提出Chimera，一种适用于多任务GPU的协作抢占方法，可以精确控制抢占的开销。</p>
+<blockquote>
+<p>   Chimera can achieve a specified preemption latency while minimizing throughput overhead</p>
+</blockquote>
+<p>所谓精确控制抢占的开销：实现指定的抢占延时，同时最小化吞吐量。</p>
+<blockquote>
+<p>   Chimera achieves the goal by intelligently selecting which SMs to preempt and how each thread block will be preempted.</p>
+</blockquote>
+<p>Chimera具体实现：智能选择抢占哪个SM，以及如何抢占每个线程块<br>综合使用<strong>Flushing</strong>、<strong>Context switching</strong>、<strong>Draining</strong>这三种技术。</p>
+<h2 id="本文的contribution"><a href="#本文的contribution" class="headerlink" title="本文的contribution"></a>本文的contribution</h2><ol>
+<li><p>分析GPU的刷新条件： 放宽幂等的语义定义</p>
+</li>
+<li><p>分析 抢占技术（ context switching, draining, and flushing） 与线程运行过程的定量关系</p>
+</li>
+<li><p>Chimera的实现： 根据不同的抢占技术的开销来智能选择抢占哪个SM以及如何抢占线程块。</p>
+</li>
+</ol>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><blockquote>
+<p>   overhead comes in two dimensions: a preempting kernel suffers from a long preemption latency, and the system throughput is wasted during the switch</p>
+</blockquote>
+<p>这里的开销主要体现两方面： 抢占延时长，系统的吞吐量浪费</p>
+<ul>
+<li>Context switching</li>
+</ul>
+<blockquote>
+<p>   Context switching stores the context of currently running thread blocks, and preempts an SM with a new kernel.</p>
+</blockquote>
+<p>Context switching 是保存当前运行线程块的上下文，并用新内核抢占SM。（中规中矩）</p>
+<ul>
+<li>Draining</li>
+</ul>
+<blockquote>
+<p>   Draining stops issuing new thread blocks to the SM and waits until the SM finishes its currently running thread blocks.</p>
+</blockquote>
+<p>Draining 是停止分配新线程块给SM，等待当前线程块运行完，再抢占该SM。（彬彬有礼）</p>
+<ul>
+<li>Flushing</li>
+</ul>
+<blockquote>
+<p>   Flushing drops the execution of running thread blocks and preempts the SM almost instantly.</p>
+</blockquote>
+<p>Flushing 是取消正在运行的线程块，立即抢占SM（粗暴无礼）。</p>
+<h4 id="三种抢占技术不同开销的原因"><a href="#三种抢占技术不同开销的原因" class="headerlink" title="三种抢占技术不同开销的原因"></a>三种抢占技术不同开销的原因</h4><ul>
+<li>the estimated preemption latency for each preemption technique.</li>
+<li>the estimated throughput overhead for each preemption technique.</li>
+</ul>
+<blockquote>
+<p>the theoretical cost of each preemption technique if a thread block at given progress is preempted</p>
+<ul>
+<li>The cost of context switching is dependent on the context size and the available bandwidth for an SM, which is almost constant across thread block execution</li>
+<li>The cost of draining, which is primarily preemption latency, is dependent on the remaining execution time of a thread block. It decreases toward the end of the thread block progress.</li>
+<li>The cost of flushing, on the other hand, is primarily throughput overhead, which is dependent on the work thrown away by flushing.</li>
+</ul>
+</blockquote>
+<p>结论： 采用何种技术更多取决于线程块运行过程的状态，若线程块刚开始运行，采用flushing；若运行到一半，采用contextSwitching；若运行到末尾，采用draining</p>
+<h2 id="实现（跟进）"><a href="#实现（跟进）" class="headerlink" title="实现（跟进）"></a>实现（跟进）</h2><h3 id="3-1GPU-Scheduler-with-PreemptiveMultitasking"><a href="#3-1GPU-Scheduler-with-PreemptiveMultitasking" class="headerlink" title="3.1GPU Scheduler with PreemptiveMultitasking"></a>3.1GPU Scheduler with PreemptiveMultitasking</h3><blockquote>
+<p>An SM partitioning policy in the kernel scheduler tells howmany SMs each kernelwill run on Chimera consists of two parts: estimating costs of preemption for<br>each technique, and selecting SMs to preempt with corresponding preempting techniques. Chimera can directly compare the estimated cost of each preemption technique</p>
+</blockquote>
+<h3 id="3-2-Cost-Estimation"><a href="#3-2-Cost-Estimation" class="headerlink" title="3.2 Cost Estimation"></a>3.2 Cost Estimation</h3><p>estimate the cost of each preemption technique precisely for each SM.</p>
+<p>First, Chimera measures the total number of executed instructions for each thread block to determine the progress of each thread block</p>
+<p>Second, Chimera also measures the progress of each thread block in cycles</p>
+<p>instructions-per-cycle (IPC) or cycles-per-instruction (CPI)</p>
+<p>estimate the preemption latency of context switching using the same method</p>
+<h3 id="3-3-Preemption-Selection"><a href="#3-3-Preemption-Selection" class="headerlink" title="3.3 Preemption Selection"></a>3.3 Preemption Selection</h3><p>how Chimera selects a subset of SMs and techniques to preempt.</p>
+<p>The time complexity of algorithm 1 is O(NT logT + NlogN),</p>
+<p>Thus, the impact of the selection algorithm in Chimera is negligible to the preemption latency.</p>
+<h3 id="3-4-SM-Flushing"><a href="#3-4-SM-Flushing" class="headerlink" title="3.4 SM Flushing"></a>3.4 SM Flushing</h3><p>We relax the idempotence condition by looking at thread blocks individually with the notion of time</p>
+<h2 id="实验结果评估"><a href="#实验结果评估" class="headerlink" title="实验结果评估"></a>实验结果评估</h2><h3 id="实验结果数据"><a href="#实验结果数据" class="headerlink" title="实验结果数据"></a>实验结果数据</h3><p>各种表格</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><blockquote>
+<p>Evaluations show that Chimera violates the deadline for only 0.2% of preemption requests when a 15µs preemption latency constraint is used. For multi-programmed workloads, Chimera can improve the average normalized turnaround time by 5.5x, and system throughput by 12.2%</p>
+</blockquote>
+<p>改善平均周转时间和吞吐量。</p>
+<h2 id="个人看法"><a href="#个人看法" class="headerlink" title="个人看法"></a>个人看法</h2><ul>
+<li>这种综合的抢占技术应对饥饿情况？</li>
+<li>采用何种抢占技术的决策时间复杂度是否掩盖Chimera本身抢占优势？<ul>
+<li>虽然paper有提到，但感觉还有些讨论的空间余地。<br>……</li>
+</ul>
+</li>
+</ul>
+
+    
+  </div>
+  <footer>
+    
+      
+  <div class="categories">
+    <a class="categories-link" href="/categories/论文/">论文</a>
+  </div>
+
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/paper-os/">paper os</a>
+  </div>
+
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">评论</h1>
+  <div class="ds-thread" data-title="论文笔记：Chimera" data-thread-key="2015/11/15/论文笔记：Chimera-Collaborative-Preemption-for-Multitasking-on-a-Shared-GPU/">
+  </div>
+</section>
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2017 <a href="/">余 ξ</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+   | 
+  Reredesign by <a href="https://github.com/Jane8Yu" target="_blank">yzhen</a>
+</div>
+<div class="clearfix"></div>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script></footer>
+  <div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/scale.fix.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/star-bg.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->`
+
+
+<script type="text/javascript">
+  var duoshuoQuery = { short_name: 'lexyu-blog' };
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';
+    ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59443742-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
