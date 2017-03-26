@@ -81,6 +81,56 @@
   <header>
     
       <div class="icon"></div>
+      <a href="/2015/03/24/跨域请求/">
+  <time datetime="2015-03-23T23:47:49.000Z">
+    2015-03-24
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title"><a href="/2015/03/24/跨域请求/">跨域请求</a></h1>
+  
+
+  </header>
+  
+  <div class="entry">
+    
+      <h5 id="What"><a href="#What" class="headerlink" title="What"></a>What</h5><ul>
+<li>不同域名下的数据交互</li>
+<li>跨域有两种情况：<ul>
+<li>子域b.a，主域a</li>
+<li>域名不同，但IP地址相同</li>
+</ul>
+</li>
+</ul>
+<h5 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h5><ul>
+<li>考虑到安全策略，ajax无法跨域</li>
+<li><strong>JSONP</strong></li>
+<li>html5:<strong>postMessage</strong></li>
+<li>window.name<strong>代理</strong>，安全不暴露，a-&gt;代理-&gt;b</li>
+<li>（后台）服务器代理：XMLHttpRequest代理文件</li>
+<li>子域 主域，document.domain=’a.com’</li>
+<li>flash方法</li>
+</ul>
+
+    
+  </div>
+  <footer class="end-sep">
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+  
+    <article class="post">
+  <header>
+    
+      <div class="icon"></div>
       <a href="/2015/02/06/webstorm配置/">
   <time datetime="2015-02-06T11:12:18.000Z">
     2015-02-06

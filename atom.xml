@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-04T12:46:28.000Z</updated>
+  <updated>2017-03-26T13:56:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Summary of 2017.3</title>
+    <link href="http://yoursite.com/2017/03/26/Summary-of-2017-3-md/"/>
+    <id>http://yoursite.com/2017/03/26/Summary-of-2017-3-md/</id>
+    <published>2017-03-26T13:08:39.000Z</published>
+    <updated>2017-03-26T13:56:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=518807&auto=0&height=66"></iframe>
+
+<p>This month I’ve been busy with internship-hunting.<br>I admit that I stll have a lot to learn, feeling so blue after the interview.</p>
+<p>But sometimes I think is it ridiculours for foreign front-end engineers to be asked to use float css attribute to layout the page when css3 new attribute grid is available?<br>Using JavaScript prototype to implement oop is so ugly. Because JavaScript isn’t born for oop. Would it be more elegant to use delegate to reuse code?<br>Anyway, I just feel that some front-end tech and ideology is behind the times in here.<br>What is the best way to select the right one?<br>Can’t wait to see it!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端 脑图" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF-%E8%84%91%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>the Year of Rooster</title>
