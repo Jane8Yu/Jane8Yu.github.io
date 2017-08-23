@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-04T12:46:28.000Z</updated>
+  <updated>2017-08-23T14:25:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Handling concurrency gracefully</title>
+    <link href="http://yoursite.com/2017/08/23/Handling-concurrency-gracefully/"/>
+    <id>http://yoursite.com/2017/08/23/Handling-concurrency-gracefully/</id>
+    <published>2017-08-23T13:47:41.000Z</published>
+    <updated>2017-08-23T14:25:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有一天，你想知道你家的小猫咪kakiki整天出去厮混的朋友有谁？<br>首先，你得知道你家猫咪的唯一标识id，然后再用这个id去数据库查它的朋友。<br>因此，你得发送两个请求，其中第一个请求结果是第二请求的参数。<br>相信，很多人都遇到过类似这样的情景吧！甚至可能需要发送五六个请求。怎么解决呢？<br><a id="more"></a></p>
+<hr>
+<p>我们先来弄个假的数据库，用setTimeout来假装网络延迟(<em>@ο@</em>) </p>
+<h1 id="Make-a-fake-db"><a href="#Make-a-fake-db" class="headerlink" title="Make a fake db"></a>Make a fake db</h1><pre><code>class FakeDatabase{
+constructor(){
+    this.purr = {
+        id: 1,
+        name: &apos;kakiki&apos;
+    };
+    this.purrs = [this.purr, this.purr, this.purr];
+}
+getPurr(){
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(()=&gt;resolve(this.purr), 233);
+    })
+}
+getPurrs(purrId){
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(()=&gt;resolve(this.purrs.slice()), 233);
+    })
+}
+throwError(){
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(()=&gt;reject(new Error(&apos;Internal error&apos;)), 233);
+    })
+}
+}
+const db = new FakeDatabase();
+let purr, purrs;
+</code></pre><hr>
+<p>用回调是怎样写的呢？</p>
+<h1 id="In-callback-way"><a href="#In-callback-way" class="headerlink" title="In callback way"></a>In callback way</h1><pre><code>function callbackHell(){
+db.getPurr().then((returnedPurr)=&gt;{
+    purr = returnedPurr;
+    db.getPurrs(purr.id).then((returnedPurrs)=&gt;{
+        purrs = returnedPurrs;
+        console.log(&quot;callbackHell &quot;, {purr, purrs});
+    })
+})
+}
+</code></pre><hr>
+<p>写完之后是不是觉得有点恶心，那我们用promise吧<br>（紫霞仙子，你还记得那个一万年期限的承诺吗/(ㄒoㄒ)/~~）</p>
+<h1 id="In-promise-chain-way"><a href="#In-promise-chain-way" class="headerlink" title="In promise chain way"></a>In promise chain way</h1><pre><code>function promiseChain(){
+db.getPurr()
+    .then((returnedPurr)=&gt;{
+        purr = returnedPurr;
+        return db.getPurrs(purr.id);
+    })
+    .then((returnedPurrs)=&gt;{
+        purrs = returnedPurrs;
+        console.log(&quot;promiseChain &quot;, {purr, purrs});
+    })
+}
+</code></pre><hr>
+<p>写完之后，觉得还是不够优雅。用async/await可以假装成是串行。（记得用babel来兼容老顽固😯）</p>
+<h1 id="In-asyncAwait-way"><a href="#In-asyncAwait-way" class="headerlink" title="In asyncAwait way"></a>In asyncAwait way</h1><pre><code>async function asyncAwait(){
+try{
+    purr = await db.getPurr();
+    purrs = await db.getPurrs(purr.id);
+    console.log(&quot;asyncAwait &quot;, {purr, purrs});
+    //循环遍历
+    const purrsPromises = purrs.map(purr =&gt; db.getPurrs(purr.id));
+    const morePurrs = await Promise.all(purrsPromises);
+    console.log(&apos;morePurrs &apos;, morePurrs);
+}catch(err){
+    //异常流
+    console.error(err);
+}
+}
+</code></pre><hr>
+<p>现在终于知道kakiki的死党是谁了！！<br>而async/await又是怎么从promise、generator逐步演变过来的呢？<br>咱们下回分解。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.patricktriest.com/what-is-async-await-why-should-you-care/" target="_blank" rel="external">what-is-async-await-why-should-you-care</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有一天，你想知道你家的小猫咪kakiki整天出去厮混的朋友有谁？&lt;br&gt;首先，你得知道你家猫咪的唯一标识id，然后再用这个id去数据库查它的朋友。&lt;br&gt;因此，你得发送两个请求，其中第一个请求结果是第二请求的参数。&lt;br&gt;相信，很多人都遇到过类似这样的情景吧！甚至可能需要发送五六个请求。怎么解决呢？&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>the Year of Rooster</title>
