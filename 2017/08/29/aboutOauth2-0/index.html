@@ -1,0 +1,285 @@
+ <!DOCTYPE HTML>
+<html manifest="/yuzhen.appcache">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  
+  <title>对oauth2.0的一知半解 | ξ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="余 ξ">
+  
+  
+    <meta name="description" content="有一天
+你有很多钻石，托管在银行仓库的保险箱里。
+你想请人帮你鉴定这些钻石的纯度，又不想总是跑去银行，就让鉴定师自己去银行好了。
+鉴定师跟银行说要拿出你的宝石来给他鉴定。
+银行不相信,怎么办？">
+  
+  <meta name="description" content="有一天
+你有很多钻石，托管在银行仓库的保险箱里。
+你想请人帮你鉴定这些钻石的纯度，又不想总是跑去银行，就让鉴定师自己去银行好了。
+鉴定师跟银行说要拿出你的宝石来给他鉴定。
+银行不相信,怎么办？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对oauth2.0的一知半解">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/aboutOauth2-0/index.html">
+<meta property="og:site_name" content="ξ">
+<meta property="og:description" content="有一天
+你有很多钻石，托管在银行仓库的保险箱里。
+你想请人帮你鉴定这些钻石的纯度，又不想总是跑去银行，就让鉴定师自己去银行好了。
+鉴定师跟银行说要拿出你的宝石来给他鉴定。
+银行不相信,怎么办？">
+<meta property="og:image" content="http://7vijpr.com1.z0.glb.clouddn.com/oauth2.png">
+<meta property="og:updated_time" content="2017-08-29T09:18:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对oauth2.0的一知半解">
+<meta name="twitter:description" content="有一天
+你有很多钻石，托管在银行仓库的保险箱里。
+你想请人帮你鉴定这些钻石的纯度，又不想总是跑去银行，就让鉴定师自己去银行好了。
+鉴定师跟银行说要拿出你的宝石来给他鉴定。
+银行不相信,怎么办？">
+<meta name="twitter:image" content="http://7vijpr.com1.z0.glb.clouddn.com/oauth2.png">
+  
+    <link rel="alternate" href="/atom.xml" title="ξ" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59443742-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+      <span id="busuanzi_container_site_pv">
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span>
+    <h1><a href="/">ξ</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+
+
+
+    <div class="content"><article class="post">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2017/08/29/aboutOauth2-0/">
+  <time datetime="2017-08-29T09:05:03.000Z">
+    2017-08-29
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">对oauth2.0的一知半解</h1>
+  
+
+  </header>
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="http://7vijpr.com1.z0.glb.clouddn.com/oauth2.png">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="entry">
+    
+      <h2 id="有一天"><a href="#有一天" class="headerlink" title="有一天"></a>有一天</h2><ol>
+<li>你有很多钻石，托管在银行仓库的保险箱里。</li>
+<li>你想请人帮你鉴定这些钻石的纯度，又不想总是跑去银行，就让鉴定师自己去银行好了。</li>
+<li>鉴定师跟银行说要拿出你的宝石来给他鉴定。</li>
+<li>银行不相信,怎么办？<a id="more"></a></li>
+<li>打电话给你，你确认授权哪个保险箱给鉴定师<ul>
+<li>授权哪种权限  grant type</li>
+</ul>
+</li>
+<li>银行给了你临时凭证code，你把code给鉴定师（302重定向）</li>
+<li>鉴定师拿着这个code去银行换临时钥匙accessToken</li>
+<li>银行验证code ok，发给鉴定师一把仓库某保险箱的临时钥匙accessToken，还有这个钥匙对应哪个用户的openid</li>
+<li>鉴定师凭着这把临时钥匙就可以开你的保险箱拿到你的宝石验证了。</li>
+<li>如果临时钥匙过期，就得再申请一把（freshToken）<img src="http://blog.knownsec.com/wp-content/uploads/2014/05/Authorization-Code.png" alt="image"></li>
+</ol>
+<ul>
+<li>以上这种授权类型是Authorization Code（response_type=code）。</li>
+</ul>
+<hr>
+<ul>
+<li>还有另外一种简化版的认证类型Implicit（response_type=token）<ul>
+<li>Implicit则是不发code，银行直接发给鉴定师一把仓库某保险箱的临时钥匙accessToken，其它流程差不多。<img src="http://blog.knownsec.com/wp-content/uploads/2014/05/implicit.png" alt="image"><h2 id="角色定义"><a href="#角色定义" class="headerlink" title="角色定义"></a>角色定义</h2>这里出现了四个角色。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>你相当于 Resource Owner</li>
+<li>鉴定师相当于Client</li>
+<li>银行相当于Authorization Server</li>
+<li>仓库相当于Resource Server<h2 id="说白了"><a href="#说白了" class="headerlink" title="说白了"></a>说白了</h2><blockquote>
+<p>  An open protocol to allow secure authorization in a simple and standard method from web， mobile and desktop applications.<br> OAuth is a simple way to publish and interact with protected data. It’s also a safer and more secure way for people to give you access. We’ve kept it simple to save you time.</p>
+</blockquote>
+</li>
+</ol>
+<p>OAuth就是第三方的应用可以通过你的授权而不用知道你的帐号密码能够访问你在某网站的你自己的数据或功能。<br>当OAuth提供方询问用户并得到授权，就会给予第三方服务一些权限做相对应的操作。</p>
+<h2 id="谁都不相信谁"><a href="#谁都不相信谁" class="headerlink" title="谁都不相信谁"></a>谁都不相信谁</h2><p>由于这三个角色都不相信对方，那么就需要这写参数来证明身份不是假冒的了。</p>
+<ul>
+<li>你  Resource Owner</li>
+<li>鉴定师 Client</li>
+<li>银行相 Authorization Server</li>
+</ul>
+<h3 id="appid"><a href="#appid" class="headerlink" title="appid"></a>appid</h3><p>鉴定师在银行注册，银行给每个鉴定师编号appid，从而可以辨识多个鉴定师。</p>
+<h3 id="secret"><a href="#secret" class="headerlink" title="secret"></a>secret</h3><ul>
+<li>鉴定师在银行注册时，双方约定好一个秘密信物secret。</li>
+<li>日后鉴定师凭code来获取accessToken时，需要带上secret来向银行证明自己不是假冒的。</li>
+<li>也避免了DNS 污染。</li>
+</ul>
+<h3 id="state"><a href="#state" class="headerlink" title="state"></a>state</h3><ul>
+<li>用于保持请求和回调的状态，授权请求后原样带回给第三方。该参数可用于防止csrf攻击（跨站请求伪造攻击），建议第三方带上该参数，可设置为简单的随机数加session进行校验，即用即毁。</li>
+<li>攻击者调换了自己的code给你，你把攻击者的临时凭证给了鉴定师，鉴定师便以为拿到了你的临时钥匙，实际上拿的是攻击者的临时钥匙。如果你让鉴定师帮忙再放个宝石进保险箱里，实际上是放进了攻击者的保险箱里。</li>
+<li>因此，鉴定师要用state来检验你就是你，而不是攻击者。也即鉴定师让你打电话给银行的那个你，和把code给鉴定师的的那个你，是同一个。</li>
+</ul>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><ul>
+<li>这个code很有可能被攻击者截取了，可能发生在银行告诉你的过程中，也可能发生在你告诉鉴定师的过程中。</li>
+<li>所以这两个过程最好使用https协议，尽量不要连不安全的wifi。</li>
+<li>由于code只能用一次，而且一般10分钟后过期。</li>
+<li>如果有另外一个鉴定师也拿着这个code来获取accessToken，那么银行设置之前通过此code 获取的 access token失效。</li>
+<li>所以即使code被截取了也不会为时过晚，鉴定师紧跟攻击者后把code给银行，银行发现不对劲，立即撤销accessToken。</li>
+<li>攻击者还没用accessToken拿到宝石，这临时钥匙就失效了。。</li>
+</ul>
+<h3 id="redirect-uri"><a href="#redirect-uri" class="headerlink" title="redirect_uri"></a>redirect_uri</h3><p>相当于鉴定师在银行注册时的手机号。</p>
+<ul>
+<li>（微信网页授权的情形下，是鉴定师把自己的手机号和state告诉给你，让你打电话给银行确认授权）</li>
+<li>你跟银行确认授权（已经登陆了就用cookie）哪个保险箱给鉴定师时，顺便把state、权限范围scope、鉴定师appid、鉴定师的号码也给了银行。</li>
+<li>银行确认了你授权，把你给的手机号和鉴定师在银行注册时的手机号进行校验。</li>
+<li>检验无误后，把code给你，手机号也给回你。</li>
+<li>你自动根据这个电话给鉴定师，告诉他这个code。</li>
+<li>如果银行不校验这个手机号，就很有可能误导你打错电话，把code告诉给了别人。</li>
+<li>又或者银行完整校验这个手机号，这个手机号可能转播给攻击者。<h3 id="accessToken"><a href="#accessToken" class="headerlink" title="accessToken"></a>accessToken</h3>临时调用接口凭证，2小时<h3 id="granttype"><a href="#granttype" class="headerlink" title="granttype"></a>granttype</h3>说明是哪种授权方式，authorization_code还是implict。<br>和code一起给银行<h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3>授予哪种权限范围，微信有两种snsapi_base、snsapi_userinfo<h3 id="openid"><a href="#openid" class="headerlink" title="openid"></a>openid</h3>鉴定师的客户在银行里的唯一标识<h3 id="unionid"><a href="#unionid" class="headerlink" title="unionid"></a>unionid</h3>鉴定师联盟的客户在银行里的唯一标识<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2></li>
+</ul>
+<ol>
+<li>你得找个可靠的鉴定师，只授权给可信的第三方应用</li>
+<li>银行要验证鉴定师是否假冒的，对redirect_uri进行全路径验证，避免绕过<h2 id="oauth2改进了oauth1哪些不足？"><a href="#oauth2改进了oauth1哪些不足？" class="headerlink" title="oauth2改进了oauth1哪些不足？"></a>oauth2改进了oauth1哪些不足？</h2></li>
+</ol>
+<ul>
+<li>OAuth分为OAuth以及OAuth 2.0。</li>
+<li>OAuth Core 1.0 版本发布于2007年12月4日，存在可被会话定向攻击(session fixation）</li>
+<li>OAuth 2.0 一定程度上防范中间人攻击。<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
+</ul>
+<ol>
+<li>银行通过secret信任鉴定师，鉴定师通过state信任你。</li>
+<li>至于银行和仓库之间如何规定好accessToken则是后话了</li>
+<li>还有其它的安全问题可参考rfc的第十章 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1></li>
+<li><a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">rfc6749</a>/<a href="http://www.rfcreader.com/#rfc6749" target="_blank" rel="external">rfc6749</a></li>
+<li><a href="https://blog.yorkxin.org/2013/09/30/oauth2-1-introduction" target="_blank" rel="external">OAuth 2.0 筆記 (1) 世界觀 </a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">理解OAuth 2.0</a></li>
+<li><a href="http://blog.knownsec.com/2014/05/oauth_vulnerability_analysis/" target="_blank" rel="external">oauth_vulnerability_analysis</a></li>
+<li><a href="https://www.chrisyue.com/security-issue-about-oauth-2-0-you-should-know.html/" target="_blank" rel="external">security-issue-about-oauth-2-0-you-should-know</a></li>
+<li><a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419317851&amp;token=&amp;lang=zh_CN" target="_blank" rel="external">wx文档1</a></li>
+<li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140842" target="_blank" rel="external">wx文档2</a></li>
+</ol>
+
+    
+  </div>
+  <footer>
+    
+      
+      
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
+  
+  &copy; 2017 <a href="/">余 ξ</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+   | 
+  Reredesign by <a href="https://github.com/Jane8Yu" target="_blank">yzhen</a>
+</div>
+<div class="clearfix"></div>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" media="none" onload="media='all'">
+
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css" media="none" onload="media='all'">
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script></footer>
+  <div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
+  <script src="/js/jquery-1.11.1.min.js" ></script>
+<script src="/js/scale.fix.js" defer="defer"></script>
+<script src="/js/jquery.imagesloaded.min.js" defer="defer"></script>
+<script src="/js/gallery.js" defer="defer"></script>
+<script src="/js/star-bg.js" defer="defer"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script> -->`
+
+
+
+<script asyn>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59443742-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css" media="none" onload="media='all'">
+<script src="/fancybox/jquery.fancybox.pack.js" defer="defer"></script>
+<script type="text/javascript">
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
+</script>
+
+</body>
+</html>
