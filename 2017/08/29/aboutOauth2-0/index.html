@@ -31,7 +31,7 @@
 鉴定师跟银行说要拿出你的宝石来给他鉴定。
 银行不相信,怎么办？">
 <meta property="og:image" content="http://7vijpr.com1.z0.glb.clouddn.com/oauth2.png">
-<meta property="og:updated_time" content="2017-08-29T09:18:46.000Z">
+<meta property="og:updated_time" content="2017-08-29T09:27:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对oauth2.0的一知半解">
 <meta name="twitter:description" content="有一天
@@ -146,19 +146,20 @@
 <hr>
 <ul>
 <li>还有另外一种简化版的认证类型Implicit（response_type=token）<ul>
-<li>Implicit则是不发code，银行直接发给鉴定师一把仓库某保险箱的临时钥匙accessToken，其它流程差不多。<img src="http://blog.knownsec.com/wp-content/uploads/2014/05/implicit.png" alt="image"><h2 id="角色定义"><a href="#角色定义" class="headerlink" title="角色定义"></a>角色定义</h2>这里出现了四个角色。</li>
+<li>Implicit则是不发code，银行直接发给鉴定师一把仓库某保险箱的临时钥匙accessToken，其它流程差不多。<img src="http://blog.knownsec.com/wp-content/uploads/2014/05/implicit.png" alt="image"></li>
 </ul>
 </li>
 </ul>
+<h2 id="角色定义"><a href="#角色定义" class="headerlink" title="角色定义"></a>角色定义</h2><p>这里出现了四个角色。</p>
 <ol>
 <li>你相当于 Resource Owner</li>
 <li>鉴定师相当于Client</li>
 <li>银行相当于Authorization Server</li>
-<li>仓库相当于Resource Server<h2 id="说白了"><a href="#说白了" class="headerlink" title="说白了"></a>说白了</h2><blockquote>
-<p>  An open protocol to allow secure authorization in a simple and standard method from web， mobile and desktop applications.<br> OAuth is a simple way to publish and interact with protected data. It’s also a safer and more secure way for people to give you access. We’ve kept it simple to save you time.</p>
-</blockquote>
-</li>
+<li>仓库相当于Resource Server</li>
 </ol>
+<h2 id="说白了"><a href="#说白了" class="headerlink" title="说白了"></a>说白了</h2><blockquote>
+<p>  An open protocol to allow secure authorization in a simple and standard method from web， mobile and desktop applications.<br>    OAuth is a simple way to publish and interact with protected data. It’s also a safer and more secure way for people to give you access. We’ve kept it simple to save you time.</p>
+</blockquote>
 <p>OAuth就是第三方的应用可以通过你的授权而不用知道你的帐号密码能够访问你在某网站的你自己的数据或功能。<br>当OAuth提供方询问用户并得到授权，就会给予第三方服务一些权限做相对应的操作。</p>
 <h2 id="谁都不相信谁"><a href="#谁都不相信谁" class="headerlink" title="谁都不相信谁"></a>谁都不相信谁</h2><p>由于这三个角色都不相信对方，那么就需要这写参数来证明身份不是假冒的了。</p>
 <ul>
@@ -193,21 +194,28 @@
 <li>检验无误后，把code给你，手机号也给回你。</li>
 <li>你自动根据这个电话给鉴定师，告诉他这个code。</li>
 <li>如果银行不校验这个手机号，就很有可能误导你打错电话，把code告诉给了别人。</li>
-<li>又或者银行完整校验这个手机号，这个手机号可能转播给攻击者。<h3 id="accessToken"><a href="#accessToken" class="headerlink" title="accessToken"></a>accessToken</h3>临时调用接口凭证，2小时<h3 id="granttype"><a href="#granttype" class="headerlink" title="granttype"></a>granttype</h3>说明是哪种授权方式，authorization_code还是implict。<br>和code一起给银行<h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3>授予哪种权限范围，微信有两种snsapi_base、snsapi_userinfo<h3 id="openid"><a href="#openid" class="headerlink" title="openid"></a>openid</h3>鉴定师的客户在银行里的唯一标识<h3 id="unionid"><a href="#unionid" class="headerlink" title="unionid"></a>unionid</h3>鉴定师联盟的客户在银行里的唯一标识<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2></li>
+<li>又或者银行完整校验这个手机号，这个手机号可能转播给攻击者。</li>
 </ul>
-<ol>
+<h3 id="accessToken"><a href="#accessToken" class="headerlink" title="accessToken"></a>accessToken</h3><p>临时调用接口凭证，2小时</p>
+<h3 id="granttype"><a href="#granttype" class="headerlink" title="granttype"></a>granttype</h3><p>说明是哪种授权方式，authorization_code还是implict。<br>和code一起给银行</p>
+<h3 id="scope"><a href="#scope" class="headerlink" title="scope"></a>scope</h3><p>授予哪种权限范围，微信有两种snsapi_base、snsapi_userinfo</p>
+<h3 id="openid"><a href="#openid" class="headerlink" title="openid"></a>openid</h3><p>鉴定师的客户在银行里的唯一标识</p>
+<h3 id="unionid"><a href="#unionid" class="headerlink" title="unionid"></a>unionid</h3><p>鉴定师联盟的客户在银行里的唯一标识</p>
+<h2 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h2><ol>
 <li>你得找个可靠的鉴定师，只授权给可信的第三方应用</li>
-<li>银行要验证鉴定师是否假冒的，对redirect_uri进行全路径验证，避免绕过<h2 id="oauth2改进了oauth1哪些不足？"><a href="#oauth2改进了oauth1哪些不足？" class="headerlink" title="oauth2改进了oauth1哪些不足？"></a>oauth2改进了oauth1哪些不足？</h2></li>
+<li>银行要验证鉴定师是否假冒的，对redirect_uri进行全路径验证，避免绕过</li>
 </ol>
-<ul>
+<h2 id="oauth2改进了oauth1哪些不足？"><a href="#oauth2改进了oauth1哪些不足？" class="headerlink" title="oauth2改进了oauth1哪些不足？"></a>oauth2改进了oauth1哪些不足？</h2><ul>
 <li>OAuth分为OAuth以及OAuth 2.0。</li>
 <li>OAuth Core 1.0 版本发布于2007年12月4日，存在可被会话定向攻击(session fixation）</li>
-<li>OAuth 2.0 一定程度上防范中间人攻击。<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2></li>
+<li>OAuth 2.0 一定程度上防范中间人攻击。</li>
 </ul>
-<ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>银行通过secret信任鉴定师，鉴定师通过state信任你。</li>
 <li>至于银行和仓库之间如何规定好accessToken则是后话了</li>
-<li>还有其它的安全问题可参考rfc的第十章 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1></li>
+<li>还有其它的安全问题可参考rfc的第十章 </li>
+</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
 <li><a href="https://tools.ietf.org/html/rfc6749" target="_blank" rel="external">rfc6749</a>/<a href="http://www.rfcreader.com/#rfc6749" target="_blank" rel="external">rfc6749</a></li>
 <li><a href="https://blog.yorkxin.org/2013/09/30/oauth2-1-introduction" target="_blank" rel="external">OAuth 2.0 筆記 (1) 世界觀 </a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">理解OAuth 2.0</a></li>
